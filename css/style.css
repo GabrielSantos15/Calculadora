@@ -1,0 +1,76 @@
+:root {
+    --fundo: #8ca6c9;
+    --fundo2: #e6e6e6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: #8ca6c9;
+    background-image: linear-gradient(var(--fundo), var(--fundo2));
+}
+
+#calc {
+    width: min(400px, 100%);
+    text-align: center;
+    padding: 10px;
+    background-color: #f0f8ff;
+    border-radius: 15px;
+    box-shadow: 5px 5px 7px 0px #0000002b;
+}
+
+#calc output {
+    display: block;
+    text-align: right;
+
+    padding: 1em;
+    margin: 1em;
+    line-height: 1em;
+
+    box-shadow: inset 2px 2px 5px #00000044,-2px -2px 5px #fff;
+    background-color: #e2e8e9;
+}
+
+#calc #containerButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px;
+}
+
+#calc #containerButtons .btn {
+    border: none;
+
+    color: #249292;
+    background-color: #f0f4f7;
+    box-shadow: 2px 2px 5px #0000001f, -2px -2px 5px #fff;
+
+    height: 4em;
+    font-size: 1.2em;
+
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#calc #containerButtons .btn:hover{
+    background-color: #f0f8ff;
+}
+
+#calc #containerButtons .num {
+    color: #000;
+    background-color: #ffffff;
+}
+
+#calc #containerButtons #result {
+    grid-column: span 2;
+    background-color: #25e4e4;
+}
+
