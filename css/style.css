@@ -88,4 +88,6 @@ body {
     grid-column: span 2;
     background-color: #25e4e4;
 }
-
+#calc #containerButtons #submitBtn:hover{
+    background-color: #2cdddd;
+}
