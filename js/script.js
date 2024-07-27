@@ -20,8 +20,7 @@ class Calculator {
   //  adiciona as operações
 
   processOperation(operationValue) {
-    console.log(this.operation.innerHTML);
-    if (this.operation.innerHTML == 0) {
+    if (this.operation == "") {
       return;
     }
 
@@ -35,21 +34,22 @@ class Calculator {
     switch (tool) {
       case "C":
         this.operation = "";
-        this.currentOperation = "";
-        this.update();
         break;
       case "backspace":
+        this.operation = this.operation.slice(0, -1);
         break;
     }
+    this.currentOperation = "";
+    this.update();
   }
 
   update() {
-    if (this.operation.innerHTML == 0) {
+    if (this.operation == 0) {
       this.operation = this.currentOperation;
     } else {
       this.operation += this.currentOperation;
     }
-    console.log(this.operation);
+
     this.operationView.innerHTML = this.operation ? this.operation : 0;
     this.result.innerHTML = eval(this.operation ? this.operation.replace("^", "**").replace(",", ".") : 0);
   }
